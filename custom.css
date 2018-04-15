@@ -1,0 +1,25 @@
+
+
+
+.scuryv-knave-intro {
+    color: #fff;
+}
+a {
+  color: #edac00;
+}
+a:hover,
+a:focus {
+  color: #b48400;
+}
+.btn-default {
+  border: 1px solid #edac00;
+  color: #edac00;
+  background-color: transparent;
+}
+.btn-default:hover,
+.btn-default:focus {
+  border: 1px solid #edac00;
+  outline: none;
+  color: black;
+  background-color: #edac00;
+}
