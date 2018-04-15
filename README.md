@@ -27,7 +27,9 @@ python -m http.server 8080
 
 then visit `localhost:8080` in your browser.
 
-If you have Python 2, run `python -m SimpleHTTPServer 8080`, then run `alias python='python3'`
+If you are running Python 2, you should run `python -m SimpleHTTPServer 8080`
+
+But _really_ you should run `alias python='python3'`
 
 ## Modify Content
 
