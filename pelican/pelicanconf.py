@@ -120,18 +120,21 @@ def make_links():
     descr = ""
     
     for endpoint in hooks.keys():
+
         params = hooks[endpoint]
-        descr += "<h3>captain hook endpoints:</h3>\n\n"
+
+        descr += "<p>&nbsp;</p>\n\n"
+        descr += "<h3 style=\"text-transform: lowercase;\"><code>https://hooks.charlesreid1.com/%s</code></h3>\n\n"%(endpoint)
         descr += "<p><a class=\"btn btn-default btn-lg\" href=\"%s\">"%(params['url_full'])
         descr += "<i class=\"fa fa-fw fa-2x %s\"></i> "%(params['icon'])
-        descr += "%s from %s"%(endpoint, params['url_short'])
+        descr += "%s webhook endpoint"%(endpoint)
         descr += "</a></p>\n\n"
     
     descr += "\n"
 
     return descr
 
-LINKS_TITLE = "bot links"
+LINKS_TITLE = "Captain Hook Endpoints"
 
 LINKS_DESCRIPTION = make_links()
 
