@@ -2,7 +2,9 @@
 
 Static site for web hooks site.
 
-This page uses a single-page Pelican theme to generate static content. 
+This page uses the single-page single-color Pelican theme [scurvy knave](https://git.charlesreid1.com/charlesreid1/scurvy-knave-theme) for rapid templating and deployment.
+
+scurvy knave inserts bits of html into a single-page HTML template. The bits of html are generated with Python in `pelicanconf.py`.
 
 ## Required Software
 
@@ -15,7 +17,7 @@ pip install pelican
 
 ## Make Site
 
-To make the Pelican site:
+To make the Pelican site
 
 ```
 pelican content
@@ -24,6 +26,8 @@ python -m http.server 8080
 ```
 
 then visit `localhost:8080` in your browser.
+
+If you have Python 2, run `python -m SimpleHTTPServer 8080`, then run `alias python='python3'`
 
 ## Modify Content
 
