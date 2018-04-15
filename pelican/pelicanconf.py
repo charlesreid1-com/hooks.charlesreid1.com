@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'charlesreid1'
 
-SITENAME = u'charlesreid1 hooks'
+SITENAME = u'charlesreid1 pages'
 
 SITEURL = ''
 
@@ -36,6 +36,7 @@ TEMPLATE_PAGES = {
 
 SITE_TITLE = "captain hook"
 SITE_DESCRIPTION = "a webhook server for charlesreid1 hooks"
+GITEA_URL = "https://git.charlesreid1.com/charlesreid1/hooks.charlesreid1.com"
 
 # ---
 
@@ -84,8 +85,6 @@ github.com.</p>
 <p>Captain Hook is available at <a href="https://git.charlesreid1.com/bots/b-captain-hook">git.charlesreid1.com</a>.
 </p>
 """
-# Add links to wiki pages, flask wiki page, 
-# blog posts, etc.
 
 
 # ---
@@ -93,88 +92,57 @@ github.com.</p>
 
 # This is where we document various webhook endpoints.
 
-# include <p> tags in the description
-
-def make_links_description():
+def make_links():
     descr = ""
 
-    botlinks = {
-            'twitter' : {
-                'Apollo Space Junk Bot Flock' : 'https://twitter.com/charlesreid1/lists/space-junk-botflock',
-                'Paradise Lost Bot Flock' :     'https://twitter.com/charlesreid1/lists/miltonbotflock',
-                'Ginsberg Bot Flock' :          'https://twitter.com/charlesreid1/lists/ginsbergbotflock',
-                'Math Tripos Bot' :             'https://twitter.com/math_tripos'
+    hooks = {
+            'gitea': {
+                'icon' : 'fa-code-fork',
+                'text' : 'gitea webhooks',
+                'url_short' : 'git.charlesreid1.com',
+                'url_full' : 'https://git.charlesreid1.com'
             },
-
-            'git.charlesreid1.com' : {
-                'Rainbow Mind Machine' :        'https://git.charlesreid1.com/bots/b-rainbow-mind-machine',
-                'Apollo Space Junk Bot Flock' : 'https://git.charlesreid1.com/bots/b-apollo',
-                'Paradise Lost Bot Flock' :     'https://git.charlesreid1.com/bots/b-milton',
-                'Ginsberg Bot Flock' :          'https://git.charlesreid1.com/bots/b-ginsberg',
-                'Math Tripos Bot' :             'https://git.charlesreid1.com/bots/b-tripos'
+            'github': {
+                'icon' : 'fa-github',
+                'text' : 'github webhooks',
+                'url_short' : 'github.com/charlesreid1',
+                'url_full' : 'https://github.com/charlesreid1'
             },
-
-            'pages.charlesreid1.com' : {
-                'Rainbow Mind Machine' :        'https://pages.charlesreid1.com/rainbow-mind-machine',
-                'Apollo Space Junk Bot Flock' : 'https://pages.charlesreid1.com/apollo',
-                'Paradise Lost Bot Flock' :     'https://pages.charlesreid1.com/milton',
-                'Ginsberg Bot Flock' :          'https://pages.charlesreid1.com/ginsberg',
-                'Math Tripos Bot' :             'https://pages.charlesreid1.com/tripos'
-            },
-
-            'github (mirror)' : {
-                'Rainbow Mind Machine' :        'https://github.com/charlesreid1/rainbow-mind-machine',
-                'Apollo Space Junk Bot Flock' : 'https://github.com/charlesreid1/apollospacejunk',
-                'Paradise Lost Bot Flock' :     'https://github.com/charlesreid1/milton',
-                'Ginsberg Bot Flock' :          'https://github.com/charlesreid1/ginsberg',
-                'Math Tripos Bot' :             'https://github.com/charlesreid1/tripos-bot'
-            },
-
-            'github pages (mirror)' : {
-                'Rainbow Mind Machine' :        'https://charlesreid1.github.io/rainbow-mind-machine',
-                'Apollo Space Junk Bot Flock' : 'https://charlesreid1.github.io/apollospacejunk',
-                'Paradise Lost Bot Flock' :     'https://charlesreid1.github.io/milton',
-                'Ginsberg Bot Flock' :          'https://charlesreid1.github.io/ginsberg',
-                'Math Tripos Bot' :             'https://charlesreid1.github.io/tripos-bot'
+            'dockerhub': {
+                'icon' : 'fa-cloud',
+                'text' : 'dockerhub webhooks',
+                'url_short' : 'dockerhub.com/r/charlesreid1',
+                'url_full' : 'https://dockerhub.com/r/charlesreid1'
             }
-
     }
-
-    fa_icons = {
-            'twitter' : '<i class="fa fa-twitter fa-fw"></i>',
-            'git.charlesreid1.com' : '<i class="fa fa-code-fork fa-fw"></i>',
-            'pages.charlesreid1.com' : '<i class="fa fa-file-o fa-fw"></i>',
-            'github (mirror)' : '<i class="fa fa-github fa-fw"></i>',
-            'github pages (mirror)' : '<i class="fa fa-github-square fa-fw"></i>'
-    }
-
-    for key in botlinks.keys():
-        descr += "<h3>charlesreid1 bots on %s:<h3>\n\n"%(key)
-        fa_icon = fa_icons[key]
-
-        links = botlinks[key]
-        for bot_name in links.keys():
-            bot_link = links[bot_name]
-            descr += "<p><a class=\"btn btn-default btn-lg\" href=\"%s\">"%(bot_link)
-            descr += "%s %s"%(fa_icon, bot_name)
-            descr += "</a></p>\n"
-        
-        descr += "\n"
+    
+    
+    descr = ""
+    
+    for endpoint in hooks.keys():
+        params = hooks[endpoint]
+        descr += "<h3>captain hook endpoints:</h3>\n\n"
+        descr += "<p><a class=\"btn btn-default btn-lg\" href=\"%s\">"%(params['url_full'])
+        descr += "<i class=\"fa fa-fw fa-2x %s\"></i> "%(params['icon'])
+        descr += "%s from %s"%(endpoint, params['url_short'])
+        descr += "</a></p>\n\n"
+    
+    descr += "\n"
 
     return descr
 
 LINKS_TITLE = "bot links"
 
-LINKS_DESCRIPTION = make_links_description()
+LINKS_DESCRIPTION = make_links()
 
 
 # ---
 
 
-CONTACT_TITLE = "Contact @charlesreid1"
+CONTACT_TITLE = "Contact charlesreid1"
 
 CONTACT_DESCRIPTION = """<p>Get in touch!</p>
-<p><a href="mailto:charles@charlesreid1.com">charles__at__charlesreid1.com</a></p>
+<p><a href="mailto:charles@charlesreid1.com">charles (at) charlesreid1.com</a></p>
 """
 
 
@@ -187,3 +155,4 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 DEFAULT_PAGINATION = False
+
