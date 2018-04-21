@@ -3,15 +3,10 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'charlesreid1'
-
 SITENAME = u'charlesreid1 pages'
-
 SITEURL = ''
-
 PATH = 'content'
-
 TIMEZONE = 'America/Los_Angeles'
-
 DEFAULT_LANG = u'en'
 
 # --------------8<---------------------
@@ -30,6 +25,13 @@ TEMPLATE_PAGES = {
     'custom.css' : 'custom.css'
 }
 
+INTROBKG='theme/img/intro-bg-rigging.jpg'
+LINKSBKG='theme/img/links-bg-mast.jpg'
+
+# img/ should be in content/
+# available at <url>/img
+STATIC_PATHS = ['img']
+
 # ---
 
 # description appears between <p> tags, so don't include them
@@ -41,6 +43,8 @@ GITEA_URL = "https://git.charlesreid1.com/charlesreid1/hooks.charlesreid1.com"
 # ---
 
 # include <p> tags in the description
+
+ABOUT_SHORT = "About"
 
 ABOUT_TITLE = "about hooks.charlesreid1.com"
 
@@ -158,4 +162,3 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 DEFAULT_PAGINATION = False
-
