@@ -111,13 +111,13 @@ def make_links():
                 'text' : 'github webhooks',
                 'url_short' : 'github.com/charlesreid1',
                 'url_full' : 'https://github.com/charlesreid1'
-            },
-            'dockerhub': {
-                'icon' : 'fa-cloud',
-                'text' : 'hub.docker.com webhooks',
-                'url_short' : 'hub.docker.com/r/charlesreid1',
-                'url_full' : 'https://hub.docker.com/r/charlesreid1'
             }
+            #'dockerhub': {
+            #    'icon' : 'fa-cloud',
+            #    'text' : 'hub.docker.com webhooks',
+            #    'url_short' : 'hub.docker.com/r/charlesreid1',
+            #    'url_full' : 'https://hub.docker.com/r/charlesreid1'
+            #}
     }
     
     
@@ -128,7 +128,7 @@ def make_links():
         params = hooks[endpoint]
 
         descr += "<p>&nbsp;</p>\n\n"
-        descr += "<h3 style=\"text-transform: lowercase;\"><code>https://hooks.charlesreid1.com/%s</code></h3>\n\n"%(endpoint)
+        descr += "<h3 style=\"text-transform: lowercase;\"><code>https://hooks.charlesreid1.com/webhooks</code></h3>\n\n"
         descr += "<p><a class=\"btn btn-default btn-lg\" href=\"%s\">"%(params['url_full'])
         descr += "<i class=\"fa fa-fw fa-2x %s\"></i> "%(params['icon'])
         descr += "%s webhook endpoint"%(endpoint)
