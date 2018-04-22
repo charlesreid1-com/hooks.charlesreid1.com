@@ -114,9 +114,9 @@ def make_links():
             },
             'dockerhub': {
                 'icon' : 'fa-cloud',
-                'text' : 'dockerhub webhooks',
-                'url_short' : 'dockerhub.com/r/charlesreid1',
-                'url_full' : 'https://dockerhub.com/r/charlesreid1'
+                'text' : 'hub.docker.com webhooks',
+                'url_short' : 'hub.docker.com/r/charlesreid1',
+                'url_full' : 'https://hub.docker.com/r/charlesreid1'
             }
     }
     
