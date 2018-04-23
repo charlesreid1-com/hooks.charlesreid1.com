@@ -128,7 +128,7 @@ def make_links():
         params = hooks[endpoint]
 
         descr += "<p>&nbsp;</p>\n\n"
-        descr += "<h3 style=\"text-transform: lowercase;\"><code>https://hooks.charlesreid1.com/webhooks</code></h3>\n\n"
+        descr += "<h3 style=\"text-transform: lowercase;\"><code>https://hooks.charlesreid1.com/webhook</code></h3>\n\n"
         descr += "<p><a class=\"btn btn-default btn-lg\" href=\"%s\">"%(params['url_full'])
         descr += "<i class=\"fa fa-fw fa-2x %s\"></i> "%(params['icon'])
         descr += "%s webhook endpoint"%(endpoint)
