@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
+import markdown
 
 AUTHOR = u'charlesreid1'
 SITENAME = u'charlesreid1 hooks'
@@ -42,56 +43,50 @@ GITEA_URL = "https://git.charlesreid1.com/charlesreid1/hooks.charlesreid1.com"
 
 # ---
 
-# include <p> tags in the description
+about_md = markdown.Markdown(extensions=['extra','codehilite'],
+                             output_format='html4')
 
 ABOUT_SHORT = "About"
 
 ABOUT_TITLE = "about hooks.charlesreid1.com"
 
-ABOUT_DESCRIPTION = """
-<p>
-<a href="https://git.charlesreid1.com/bots/b-captain-hook">hooks on git.charlesreid1.com</a>
-</p>
+ABOUT_TEXT = """
+**What is a webhook?**
 
-<p>&nbsp;</p>
-
-<p><b>What is a webhook?</b></p>
-
-<p>A webhook is just an HTTP request sent by one server to another
+A webhook is just an HTTP request sent by one server to another
 when an event happens. Think of it as a digital representation of a 
 real-world event. You can set up webhooks for github repositories,
 dockerhub builds, changes to domain names, or anything else you 
-can imagine.</p>
+can imagine.
 
-<p>&nbsp;</p>
+<br />
 
-<p><b>What is a webhook server?</b></p>
+**What is a webhook server?**
 
-<p>A webhook server is just a fancy name for an HTTP server that can 
+A webhook server is just a fancy name for an HTTP server that can 
 accept webhooks from other servers. A webhook server is set up with 
 various endpoints for various webhooks, and it can fire off other 
 webhooks, run programs, or create data.
-</p>
 
-<p>&nbsp;</p>
+<br />
 
-<p><b>What is captain hook?</b></p>
+**What is Captain Hook?**
 
-<p>Captain Hook is a webhook server running on Python's 
+Captain Hook is a webhook server running on Python's 
 Flask library. Flask is used to create endpoints for 
 different services like git.charlesreid1.com or 
-github.com.</p>
+Github.com.
 
-<p>&nbsp;</p>
+<br />
 
-<p><b>Where can I find Captain Hook?</b></p>
+**Where can I find Captain Hook?**
 
-<p>Captain Hook is available at <a href="https://git.charlesreid1.com/bots/b-captain-hook">git.charlesreid1.com</a>.
-</p>
+Captain Hook is available at 
+[git.charlesreid1.com](https://git.charlesreid1.com/bots/b-captain-hook).
 """
 
+ABOUT_DESCRIPTION = about_md.convert(ABOUT_TEXT)
 
-# ---
 
 
 # This is where we document various webhook endpoints.
