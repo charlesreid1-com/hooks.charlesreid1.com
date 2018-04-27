@@ -82,7 +82,7 @@ Github.com.
 **Where can I find Captain Hook?**
 
 Captain Hook is available at 
-[git.charlesreid1.com](https://git.charlesreid1.com/bots/b-captain-hook).
+[git.charlesreid1.com/bots/b-captain-hook](https://git.charlesreid1.com/bots/b-captain-hook).
 """
 
 ABOUT_DESCRIPTION = about_md.convert(ABOUT_TEXT)
